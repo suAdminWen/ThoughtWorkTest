@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+        <script src="./jquery-3.2.1.js"></script>        
+        <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+        <style>
+            li{list-style: none;}
+            body{width: 60%;margin: 0 auto;}
+        </style>
+    </head>
+<body>
+    
+    <h1>统一建模语言理论测试</h1>
+    <table class="table table-striped table-hover">
+        <tbody>
+            <tr>
+                <td>考试科目: </td><td>统一建模语言</td>
+                <td>时间：</td><td>100分钟</td>
+                <td>得分：</td><td>100</td>
+            </tr>
+            <tr>
+                <td>班级：</td><td><input type="text" name="personClass" class="form-control" value="1班"></td>
+                <td>学号：</td><td><input type="text" name="personId" class="form-control" value="001"></td>
+                <td>姓名：</td><td><input type="text" name="personName" class="form-control" value="王小闹"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>二、选择题（每题10分，共20分）</h2>
+    <label>1.UML与软件工程的关系是：</label>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="true">(A)UML就是软件工程
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">(B)UML参与到软件工程中软件开发过程的几个阶段
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">(C)UML与软件工程无关
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">(D)UML是软件工程的一部分
+        </label>
+    </div>
+
+    <label>2.Java语言支持：</label>
+    <div class="radio">
+        <label>
+            <input type="radio" name="javaSupport" id="optionsRadios1" value="option1" checked="true">(A)单继承
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="javaSupport" id="optionsRadios1" value="option1">(B)多继承
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="javaSupport" id="optionsRadios1" value="option1">(C)单继承和多继承都支持
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" name="javaSupport" id="optionsRadios1" value="option1">(D)单继承和多继承都不支持
+        </label>
+    </div>
+
+    <h3>一、填空题（每空5分，共20分）</h2>
+    <form class="form-inline">
+      <div class="form-group">
+        <label>1.UML的中文全称是：</label>
+        <input type="text" class="form-control" value="统一建模语言" >
+      </div>
+    </form>
+
+    <form class="form-inline">
+      <div class="form-group">
+        <label>2.对象最突出的特征是：</label>
+        <input class="form-control" name="character" type="text" value="封装性">
+        <input class="form-control" name="character"  type="text" value="继承性">
+        <input class="form-control" name="character"  type="text" value="多态性">
+      </div>
+    </form>
+
+     <h3>三、多择题（每题10分，共20分）</h2>
+        <label>1.用例的粒度分为以下哪三种：</label>
+        <div class="checkbox">
+            <label style="width:23%;">
+                <input name="granularity" type="checkbox" checked="true">(A)概述级
+            </label>
+            <label style="width:23%;">
+                <input name="granularity" type="checkbox">(B)需求级
+            </label>
+            <label style="width:23%;">
+                <input name="granularity" type="checkbox">(C)用户目标级
+            </label>
+            <label style="width:23%;">
+                <input name="granularity" type="checkbox">(D)子功能级
+            </label>
+        </div>
+
+
+        <label>2.类图由以下哪三个部分组成：</label>
+        <div class="checkbox">
+            <label style="width:23%;">
+                <input name="granular" type="checkbox" checked="true">(A)名称(Name)
+            </label>
+            <label style="width:23%;">
+                <input name="granular" type="checkbox" checked="true">(B)属性(Attribute)
+            </label>
+            <label style="width:23%;">
+                <input name="granular" type="checkbox">(C)操作(Operation)
+            </label>
+            <label style="width:23%;">
+                <input name="granular" type="checkbox">(D)方法(Function)
+            </label>
+        </div>
+
+
+    <h3>四、判断题（每题10分，共20分）</h2>
+    <lable>1.用例图只是用于和客户交流和沟通的，用于确定需求。
+        <input name="judge1" type="radio" checked="true">  <span class="glyphicon glyphicon-ok"></span>
+        <input name="judge1" type="radio"> <span class="glyphicon glyphicon-remove"></span>
+    </lable>
+    <br>
+    <lable>2.在状态图中，终止状态在一个状态图中允许有任意多个。
+        <input name="judge2" type="radio" checked="true"><span class="glyphicon glyphicon-ok"></span>
+        <input name="judge2" type="radio"><span class="glyphicon glyphicon-remove"></span>
+    </lable>
+
+
+    <h3>五、简答题（每题20分，共20分）</h2>
+    <lable>1.简述什么是模型以及模型的表现形式？</lable>
+    <textarea name="resume" id="resume"  class="form-control" rows="3">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式：可以是物理实体；可以是某种图形；或者是另一种数学表达式。
+    </textarea>
+    <br>
+    <button type="button" class="btn btn-primary">计算分数</button>
+
+</body>
+</html>
