@@ -234,7 +234,7 @@ describe('99_bottles_of_beer', function () {
 
     });
 
-    it('return when given the number equal to 1', () => {
+    it('return when given the number equal to 0', () => {
         let number = 0;
         const str = "No more bottles of beer on the wall, no more bottles of beer.\n" +
             "Go to the store and buy some more, 99 bottles of beer on the wall.\n";
