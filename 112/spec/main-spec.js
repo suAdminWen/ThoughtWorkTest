@@ -1,10 +1,9 @@
 const main = require('../main/main');
 
 describe('pos', function () {
-    let cart = [];
-    let promotionsGoodsCart = [];
-    let totalInfor = {};
-    let inputs = [
+
+    it("Returns the formatted input", () =>{
+        let inputs = [
             'ITEM000001',
             'ITEM000001',
             'ITEM000001',
@@ -16,8 +15,6 @@ describe('pos', function () {
             'ITEM000005'
             ];
 
-
-    it("format input", () =>{
         let result = [
             'ITEM000001',
             'ITEM000001',
@@ -35,7 +32,19 @@ describe('pos', function () {
     });
 
     it("get Commodity And Count", () =>{
-
+        let cart = [];
+        let inputs = [
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000003',
+            'ITEM000003',
+            'ITEM000005',
+            'ITEM000005',
+            'ITEM000005'
+        ];
         let result = [
             {barcode: 'ITEM000001', count: 5},
             {barcode: 'ITEM000003', count: 2},
@@ -46,7 +55,13 @@ describe('pos', function () {
         expect(cart).toEqual(result);
     });
 
-    it("get all goods information", () =>{
+    it("return all goods when given barcode and count", () =>{
+        let cart = [
+            {barcode: 'ITEM000001', count: 5},
+            {barcode: 'ITEM000003', count: 2},
+            {barcode: 'ITEM000005', count: 3}
+        ];
+
         let result = [
             {"barcode": 'ITEM000001', "count": 5, "name": "雪碧", "unit": "瓶", "price": 3.00, "subtotal": 15.00},
             {"barcode": 'ITEM000003', "count": 2, "name": "荔枝", "unit": "斤", "price": 15.00, "subtotal": 30.00},
@@ -58,6 +73,12 @@ describe('pos', function () {
     });
 
     it("get promotions information", () => {
+        let cart = [
+            {"barcode": 'ITEM000001', "count": 5, "name": "雪碧", "unit": "瓶", "price": 3.00, "subtotal": 15.00},
+            {"barcode": 'ITEM000003', "count": 2, "name": "荔枝", "unit": "斤", "price": 15.00, "subtotal": 30.00},
+            {"barcode": 'ITEM000005', "count": 3, "name": "方便面", "unit": "袋", "price": 4.50, "subtotal": 13.50}
+        ];
+
         let result = [
             {"barcode": 'ITEM000001', "name": "雪碧", "count": 1, "price": 3.00, "unit": "瓶"},
             {"barcode": 'ITEM000005', "name": "方便面", "count": 1, "price": 4.50, "unit": "袋"},
@@ -69,13 +90,34 @@ describe('pos', function () {
     });
 
     it("get total information", () =>{
+        let cart = [
+            {"barcode": 'ITEM000001', "count": 5, "name": "雪碧", "unit": "瓶", "price": 3.00, "subtotal": 15.00},
+            {"barcode": 'ITEM000003', "count": 2, "name": "荔枝", "unit": "斤", "price": 15.00, "subtotal": 30.00},
+            {"barcode": 'ITEM000005', "count": 3, "name": "方便面", "unit": "袋", "price": 4.50, "subtotal": 13.50}
+        ];
+        let promotionsGoodsCart = [
+            {"barcode": 'ITEM000001', "name": "雪碧", "count": 1, "price": 3.00, "unit": "瓶"},
+            {"barcode": 'ITEM000005', "name": "方便面", "count": 1, "price": 4.50, "unit": "袋"},
+        ];
+
         const result = {"total": 51.00, "promotions": 7.50};
 
         totalInfor = main.getTotalInfor(cart, promotionsGoodsCart);
         expect(totalInfor).toEqual(result);
     });
 
-    it("print", ()=>{
+    it("print when given cart and pormotins goods cart and total Informations", ()=>{
+        let cart = [
+            {"barcode": 'ITEM000001', "count": 5, "name": "雪碧", "unit": "瓶", "price": 3.00, "subtotal": 15.00},
+            {"barcode": 'ITEM000003', "count": 2, "name": "荔枝", "unit": "斤", "price": 15.00, "subtotal": 30.00},
+            {"barcode": 'ITEM000005', "count": 3, "name": "方便面", "unit": "袋", "price": 4.50, "subtotal": 13.50}
+        ];
+        let promotionsGoodsCart = [
+            {"barcode": 'ITEM000001', "name": "雪碧", "count": 1, "price": 3.00, "unit": "瓶"},
+            {"barcode": 'ITEM000005', "name": "方便面", "count": 1, "price": 4.50, "unit": "袋"},
+        ];
+        let totalInfor = {"total": 51.00, "promotions": 7.50};
+
         const result =
             '***<没钱赚商店>购物清单***\n' +
             '名称：雪碧，数量：5瓶，单价：3.00(元)，小计：12.00(元)\n' +
@@ -98,6 +140,18 @@ describe('pos', function () {
 
 
     it('should print correct text', function () {
+
+        let inputs = [
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000001',
+            'ITEM000003-2',
+            'ITEM000005',
+            'ITEM000005',
+            'ITEM000005'
+            ];
 
         spyOn(console, 'log');
 
