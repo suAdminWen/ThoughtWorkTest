@@ -210,4 +210,37 @@ describe('99_bottles_of_beer', function () {
         expect(result).toEqual(str);
     });
 
+    it('return when given the number equal to 2', () => {
+        let number = 2;
+        const str = "2 bottles of beer on the wall, 2 bottles of beer.\n" +
+            "Take one down and pass it around, 1 bottle of beer on the wall.\n" +
+            "1 bottle of beer on the wall, 1 bottle of beer.\n" +
+            "Take one down and pass it around, no more bottles of beer on the wall.\n" +
+            "No more bottles of beer on the wall, no more bottles of beer.\n" +
+            "Go to the store and buy some more, 99 bottles of beer on the wall.\n";
+        let result = main(number);
+        expect(result).toEqual(str);
+
+    });
+
+    it('return when given the number equal to 1', () => {
+        let number = 1;
+        const str = "1 bottle of beer on the wall, 1 bottle of beer.\n" +
+            "Take one down and pass it around, no more bottles of beer on the wall.\n" +
+            "No more bottles of beer on the wall, no more bottles of beer.\n" +
+            "Go to the store and buy some more, 99 bottles of beer on the wall.\n";
+        let result = main(number);
+        expect(result).toEqual(str);
+
+    });
+
+    it('return when given the number equal to 1', () => {
+        let number = 0;
+        const str = "No more bottles of beer on the wall, no more bottles of beer.\n" +
+            "Go to the store and buy some more, 99 bottles of beer on the wall.\n";
+        let result = main(number);
+        expect(result).toEqual(str);
+
+    });
+
 });

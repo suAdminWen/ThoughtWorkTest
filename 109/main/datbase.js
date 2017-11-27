@@ -37,7 +37,7 @@ module.exports.loadAllItems = function loadAllItems() {
             price: 4.50
         }
     ];
-}
+};
 
 module.exports.loadPromotions = function loadPromotions() {
     return [
@@ -50,4 +50,4 @@ module.exports.loadPromotions = function loadPromotions() {
             ]
         }
     ];
-}
+};
