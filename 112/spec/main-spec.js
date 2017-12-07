@@ -42,11 +42,10 @@ describe('pos', function () {
             'ITEM000003',
             'ITEM000003',
             'ITEM000005',
-            'ITEM000005',
             'ITEM000005'
         ];
         let result = [
-            {barcode: 'ITEM000001', count: 5},
+            {barcode: 'ITEM000001', count: 4},
             {barcode: 'ITEM000003', count: 2},
             {barcode: 'ITEM000005', count: 3}
         ];
