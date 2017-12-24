@@ -11,7 +11,7 @@ function spilt_to_zero(number, interval) {
   	number = parseFloat(number.toFixed(1))
   }
   result.push(number);
-	return result;
+  return result;
 }
 
 module.exports = spilt_to_zero;

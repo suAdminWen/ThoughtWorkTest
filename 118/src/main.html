@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <title>Form Designer</title>
+    <style>
+        #selectable .ui-selecting { background: #FECA40; }
+        #selectable .ui-selected { background: #F39814; color: white; }
+        #selectable { list-style-type: none; margin: 0; padding: 0; width: 100%; display: none;}
+        #selectable li { margin: 1px; padding: 0.1em; font-size: 1em; }
+
+        table { margin-top: 10px; color: #333333; text-align: center; letter-spacing: 2px; width: 100%; border-collapse: collapse; cursor: pointer; }
+        tbody { display: table-row-group; vertical-align: middle; border-color: inherit; }
+        th, td { border: 1px solid #C8C8CB; height: 32px; width: 33% }
+        input[type='text'] { display: inline-block; height: 30px; padding: 0px; margin: 0; }
+    </style>
+</head>
+
+<body>
+<div>
+    <div style="width: 80%;margin: 0 auto;">
+
+        <input type="button" value="添加"  id="addArea">
+
+        <input type="button" value="预览"  id="preview">
+
+        <table id="form">
+            <tr>
+                <th>类型</th>
+                <th>区域</th>
+                <th class="op">操作</th>
+            </tr>
+        </table>
+
+        <div id="dialog-modal" title="请选择添加的文本类型">
+            <ol id="selectable">
+                <li class="ui-widget-content" id="addText">文本</li>
+                <li class="ui-widget-content" id="addDate">日期</li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
